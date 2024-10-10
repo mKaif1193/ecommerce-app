@@ -24,60 +24,61 @@ const Add = ({ token }) => {
 
   const onSubmitHandler = async (e) => {
     e.preventDefault();
-    setIsLoading(true);
+    toast.error("Sorry, you can't add an item!");
 
-    try {
-      const formData = new FormData();
+    // setIsLoading(true);
+    // try {
+    //   const formData = new FormData();
 
-      formData.append("name", name);
-      formData.append("description", description);
-      formData.append("price", price);
-      formData.append("category", category);
-      formData.append("subCategory", subCategory);
-      formData.append("bestseller", bestseller);
-      formData.append("sizes", JSON.stringify(sizes));
+    //   formData.append("name", name);
+    //   formData.append("description", description);
+    //   formData.append("price", price);
+    //   formData.append("category", category);
+    //   formData.append("subCategory", subCategory);
+    //   formData.append("bestseller", bestseller);
+    //   formData.append("sizes", JSON.stringify(sizes));
 
-      image1 && formData.append("image1", image1);
-      image2 && formData.append("image2", image2);
-      image3 && formData.append("image3", image3);
-      image4 && formData.append("image4", image4);
+    //   image1 && formData.append("image1", image1);
+    //   image2 && formData.append("image2", image2);
+    //   image3 && formData.append("image3", image3);
+    //   image4 && formData.append("image4", image4);
 
-      const response = await axios.post(
-        `${backendUrl}/api/product/add`,
-        formData,
-        { headers: { token } }
-      );
+    //   const response = await axios.post(
+    //     `${backendUrl}/api/product/add`,
+    //     formData,
+    //     { headers: { token } }
+    //   );
 
-      const data = response.data;
+    //   const data = response.data;
 
-      if (data.success) {
-        toast.success(data.message);
+    //   if (data.success) {
+    //     toast.success(data.message);
 
-        setName("");
-        setDescription("");
-        setPrice("");
-        setCategory("Men");
-        setSubCategory("Topwear");
-        setBestseller(false);
-        setSizes([]);
+    //     setName("");
+    //     setDescription("");
+    //     setPrice("");
+    //     setCategory("Men");
+    //     setSubCategory("Topwear");
+    //     setBestseller(false);
+    //     setSizes([]);
 
-        setImage1(false);
-        setImage2(false);
-        setImage3(false);
-        setImage4(false);
-      } else {
-        toast.error(data.message);
-      }
-    } catch (error) {
-      toast.error(error.message);
-    } finally {
-      setIsLoading(false);
-    }
+    //     setImage1(false);
+    //     setImage2(false);
+    //     setImage3(false);
+    //     setImage4(false);
+    //   } else {
+    //     toast.error(data.message);
+    //   }
+    // } catch (error) {
+    //   toast.error(error.message);
+    // } finally {
+    //   setIsLoading(false);
+    // }
   };
 
   return (
     <form
-      onSubmit={() => toast.error("Sorry, you can't add an item!")}
+      onSubmit={onSubmitHandler}
       className="flex flex-col w-full items-start gap-3"
     >
       <div>

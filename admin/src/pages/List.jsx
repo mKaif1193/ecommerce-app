@@ -30,27 +30,29 @@ const List = ({ token }) => {
   };
 
   const removeProduct = async (id) => {
-    setIsLoading(true);
-    try {
-      const response = await axios.post(
-        `${backendUrl}/api/product/remove`,
-        { id },
-        { headers: { token } }
-      );
+    toast.error("Sorry, you can't remove an item!");
 
-      const data = response.data;
+    // setIsLoading(true);
+    // try {
+    //   const response = await axios.post(
+    //     `${backendUrl}/api/product/remove`,
+    //     { id },
+    //     { headers: { token } }
+    //   );
 
-      if (data.success) {
-        toast.success(data.message);
-        await fetchList();
-      } else {
-        toast.error(data.message);
-      }
-    } catch (error) {
-      toast.error(error.message);
-    } finally {
-      setIsLoading(false);
-    }
+    //   const data = response.data;
+
+    //   if (data.success) {
+    //     toast.success(data.message);
+    //     await fetchList();
+    //   } else {
+    //     toast.error(data.message);
+    //   }
+    // } catch (error) {
+    //   toast.error(error.message);
+    // } finally {
+    //   setIsLoading(false);
+    // }
   };
 
   useEffect(() => {

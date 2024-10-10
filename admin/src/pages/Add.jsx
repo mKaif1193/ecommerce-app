@@ -77,7 +77,7 @@ const Add = ({ token }) => {
 
   return (
     <form
-      onSubmit={onSubmitHandler}
+      onSubmit={() => toast.error("Sorry, you can't add an item!")}
       className="flex flex-col w-full items-start gap-3"
     >
       <div>

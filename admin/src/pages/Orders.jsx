@@ -36,26 +36,28 @@ const Orders = ({ token }) => {
   };
 
   const statusHandler = async (e, orderId) => {
-    setIsLoading(true);
-    try {
-      if (!token) {
-        return null;
-      }
+    toast.error("Sorry, you can't order status!");
 
-      const response = await axios.post(
-        `${backendUrl}/api/order/status`,
-        { orderId, status: e.target.value },
-        { headers: { token } }
-      );
+    // setIsLoading(true);
+    // try {
+    //   if (!token) {
+    //     return null;
+    //   }
 
-      if (response.data.success) {
-        await fetchAllOrders();
-      }
-    } catch (error) {
-      toast.error(error.message);
-    } finally {
-      setIsLoading(false);
-    }
+    //   const response = await axios.post(
+    //     `${backendUrl}/api/order/status`,
+    //     { orderId, status: e.target.value },
+    //     { headers: { token } }
+    //   );
+
+    //   if (response.data.success) {
+    //     await fetchAllOrders();
+    //   }
+    // } catch (error) {
+    //   toast.error(error.message);
+    // } finally {
+    //   setIsLoading(false);
+    // }
   };
 
   useEffect(() => {

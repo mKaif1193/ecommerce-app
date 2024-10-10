@@ -36,7 +36,7 @@ const Orders = ({ token }) => {
   };
 
   const statusHandler = async (e, orderId) => {
-    toast.error("Sorry, you can't order status!");
+    toast.error("Sorry, you can't change the order status!");
 
     // setIsLoading(true);
     // try {

@@ -59,4 +59,4 @@ E-Store is a full-stack ecommerce platform developed using the MERN stack. The a
 For any questions or feedback, feel free to reach out:
 
 - Email: [muhammadkaif1193@gmail.com](mailto:muhammadkaif1193@gmail.com)
-- LinkedIn: [Muhammad Kaif](https://www.linkedin.com/in/muhammad-kaif-059a53261)
+- LinkedIn: [Muhammad Kaif](https://www.linkedin.com/in/mkaif56)
